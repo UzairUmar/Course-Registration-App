@@ -1,0 +1,7 @@
+<p>
+	<% for user in User.alphabetical  %>
+	<%= check_box_tag "course[user_ids][]", user.id, @course.users.include?(user) %>
+		 <%= user.name %>
+	   <br />
+	<% end  %>
+</p>

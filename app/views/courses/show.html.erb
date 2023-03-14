@@ -1,0 +1,17 @@
+<p>
+  <b>Title:</b>
+  <%= @course.name %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @course.code %>
+</p>
+
+<%= render 'list_of_authors' %>
+
+
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

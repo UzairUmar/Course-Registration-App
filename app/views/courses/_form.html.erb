@@ -1,0 +1,42 @@
+<%= form_for(@course) do |f| %>
+	<%= hidden_field_tag "course[user_ids][]", nil%>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr valign="top">
+			<td>
+				<h2>course details:</h2>
+				<div class="field">
+			    <%= f.label :code %><br />
+			    <%= f.text_field :code %>
+			  </div>
+
+              <div class="field">
+			    <%= f.label :name %><br />
+			    <%= f.text_field :name %>
+			  </div>
+
+              <div class="actions">
+			    <%= f.submit %>
+			  </div>
+			 
+
+			</td>
+			<td width="25">&nbsp;</td>
+			<td>
+				<h2>Add User(s):</h2>
+				<%= render :partial => 'user_checkboxes' %>
+			</td>
+		</tr>
+	</table>
+<% end %>

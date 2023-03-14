@@ -1,0 +1,8 @@
+<p>
+	<b><%= pluralize(@course.users.count, 'User') %></b><br />
+	<ul>
+		<% for user in @course.users.alphabetical %>
+			<li><%= link_to((user.name), user_path(user)) %></li>
+		<% end  %>
+	</ul>
+</p>
